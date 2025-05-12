@@ -1,0 +1,3 @@
+i_n, j_n, h, e = len(G:=open('input.txt').read().splitlines()), len(G[0]), *[next([(i,j)] for i, r in enumerate(G) for j, c in enumerate(r) if c==se) for se in 'SE']
+while h[-1] != e[0]: h.append(({(i,j) for i, j in [(h[-1][0], h[-1][1]-1), (h[-1][0], h[-1][1]+1), (h[-1][0]-1, h[-1][1]), (h[-1][0]+1, h[-1][1])] if i_n>i>=0<=j<j_n and G[i][j] != '#'}-set(h[-2:])).pop())
+print(sum(abs(i1-i0)+abs(j1-j0)==2 for n, (i0, j0) in enumerate(h) for (i1, j1) in h[n+102:]), sum(abs(i1-i0)+abs(j1-j0)<=min(20, m+2) for n, (i0, j0) in enumerate(h) for m, (i1, j1) in enumerate(h[n+102:])))
